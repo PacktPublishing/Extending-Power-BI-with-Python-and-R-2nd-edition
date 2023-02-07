@@ -1,3 +1,12 @@
 
 Extending-Power-BI-with-Python-and-R-2nd-edition.code-workspace
 Ch04 - Solving Common Issues When Using Python and R in Power BI/Demos/*
+*.pkl
+Ch05 - Importing Unhandled Data Objects/importing-rds-files/.Rproj.user/*
+Ch05 - Importing Unhandled Data Objects/importing-rds-files/*.rds
+*.Rproj
+*.pbix
+*.ipynb
+Ch05 - Importing Unhandled Data Objects/importing-pkl-files/debug-pkl-deserialization.py
+Ch05 - Importing Unhandled Data Objects/importing-rds-files/.Rhistory
+Ch05 - Importing Unhandled Data Objects/importing-pkl-files/.vscode/settings.json

@@ -9,3 +9,4 @@ Ch05 - Importing Unhandled Data Objects/importing-rds-files/*.rds
 Ch05 - Importing Unhandled Data Objects/importing-pkl-files/debug-pkl-deserialization.py
 Ch05 - Importing Unhandled Data Objects/importing-rds-files/.Rhistory
 Ch05 - Importing Unhandled Data Objects/importing-pkl-files/.vscode/settings.json
+*.rds

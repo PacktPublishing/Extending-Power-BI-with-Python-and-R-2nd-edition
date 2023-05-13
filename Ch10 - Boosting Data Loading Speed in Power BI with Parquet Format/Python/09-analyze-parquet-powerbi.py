@@ -23,7 +23,7 @@ selected_month = 11
 #print(f'{year} - {month}')
 
 # %%
-filters = (ds.field('YEAR') >= year) & (ds.field('MONTH') >= month)
+filters = (ds.field('YEAR') >= selected_year) & (ds.field('MONTH') >= selected_month)
 partitioned_latest_2_months_tbl = dataset_partitioned.to_table(filter=filters)
 
 max_dep_delay_latest_2_months_tbl = partitioned_latest_2_months_tbl.group_by(['YEAR', 'MONTH', 'DAY_OF_MONTH', 'ORIGIN']).aggregate([('DEP_DELAY', "max")])

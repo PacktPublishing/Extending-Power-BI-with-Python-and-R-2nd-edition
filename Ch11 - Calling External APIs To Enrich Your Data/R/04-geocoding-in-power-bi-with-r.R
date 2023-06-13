@@ -16,9 +16,9 @@ bing_geocode_via_address <- function(address) {
   
   r <- GET(full_url)
   
+  details_content <- content( r, "text", encoding = "UTF-8" )
+  
   if (r$status_code == 200) {
-    
-    details_content <- content( r, "text", encoding = "UTF-8" )
     
     details_lst <- tryCatch({
       
@@ -62,7 +62,7 @@ bing_geocode_via_address <- function(address) {
       formattedAddress = NA,
       lat = NA,
       lng = NA,
-      statusDesc = str_glue('ERROR: {err}'),
+      statusDesc = str_glue('ERROR!'),
       statusCode = r$status_code,
       text = details_content,
       url = r$url
@@ -83,7 +83,7 @@ base_url= "http://dev.virtualearth.net/REST/v1/Locations/"
 AUTH_KEY = Sys.getenv('BINGMAPS_API_KEY')
 
 
-tbl_orig <- read_csv(r'{D:\<your-path>\Ch11 - Calling External APIs To Enrich Your Data\geocoding_test_data.csv}',
+tbl_orig <- read_csv(r'{C:\Users\lucazav\OneDrive\MVP\PacktBook\Code\Extending-Power-BI-with-Python-and-R-2nd-edition\Ch11 - Calling External APIs To Enrich Your Data\geocoding_test_data.csv}',
                      locale = locale(encoding = 'ISO-8859-1'))
 
 tbl <- tbl_orig %>% select('full_address','lat_true','lon_true')

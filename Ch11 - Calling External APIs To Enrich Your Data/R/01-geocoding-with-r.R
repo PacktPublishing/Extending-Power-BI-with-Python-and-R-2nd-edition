@@ -16,9 +16,9 @@ bing_geocode_via_address <- function(address) {
     
     r <- GET(full_url)
     
+    details_content <- content( r, "text", encoding = "UTF-8" )
+    
     if (r$status_code == 200) {
-        
-        details_content <- content( r, "text", encoding = "UTF-8" )
         
         details_lst <- tryCatch({
             
@@ -62,7 +62,7 @@ bing_geocode_via_address <- function(address) {
             formattedAddress = NA,
             lat = NA,
             lng = NA,
-            statusDesc = str_glue('ERROR: {err}'),
+            statusDesc = str_glue('ERROR!'),
             statusCode = r$status_code,
             text = details_content,
             url = r$url

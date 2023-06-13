@@ -15,7 +15,7 @@ str_dice <- function(s, width) {
 }
 
 
-project_folder <- "D:\\<your-path>\\Chapter04\\importing-rds-files"
+project_folder <- r"{D:\<your-path>\Ch05 - Importing Unhandled Data Objects\importing-rds-files}"
 
 # Deserialize the plots list.
 plots_lst <- readRDS( file.path(project_folder, "plots_lst.rds") )

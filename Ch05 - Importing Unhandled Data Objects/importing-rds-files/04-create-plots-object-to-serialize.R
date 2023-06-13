@@ -37,7 +37,11 @@ nested_population_tbl %>%
     
     .smooth = FALSE,     # --> remove the smooth line
     .interactive = FALSE # --> generate a static plot
-  )
+  ) + 
+  # Thousand separators
+  scale_y_continuous(
+    labels=function(x) format(x, big.mark = ".",
+                              scientific = FALSE))
 
 
 # Let's generate a time series plot as shown above
@@ -59,7 +63,11 @@ nested_population_plots_tbl <- nested_population_tbl %>%
       .value = population,
       .title = paste0("Global population of ", .y),
       .smooth = FALSE,
-      .interactive = FALSE) )
+      .interactive = FALSE) + 
+        scale_y_continuous(
+          labels=function(x) format(x, big.mark = ".",
+                                    scientific = FALSE))
+      ) 
   ) %>%
 
   # Return just the 'country' and 'plot' columns.

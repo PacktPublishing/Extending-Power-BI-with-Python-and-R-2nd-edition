@@ -5,7 +5,7 @@ import pandas as pd
 # Connect to your Azure SQL Database
 conn = pyodbc.connect(
     'Driver={ODBC Driver 17 for SQL Server};'
-    'Server=lucazav.database.windows.net;'
+    'Server=<your-server-name>.database.windows.net;'
     'Database=SystemsLogging;'
     'Uid=<your-username>;'
     'Pwd=<your-password>')

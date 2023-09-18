@@ -8,7 +8,7 @@ import pandas as pd
 # Connect to your Azure SQL Database
 conn = pyodbc.connect(
     'Driver={ODBC Driver 17 for SQL Server};'
-    'Server=lucazav.database.windows.net;'
+    'Server=<your-server-name>.database.windows.net;'
     'Database=SystemLogs;'
     'Uid=<your-username>;'
     'Pwd=<your-password>')
@@ -26,7 +26,7 @@ conn.close()
 # Connect to your SQLExpress instance using the Windows Authentication
 conn = pyodbc.connect(
     'Driver={ODBC Driver 17 for SQL Server};'
-    r'Server=.\SQLExpress;'
+    r'Server=.;'
     'Database=master;'
     'Trusted_Connection=yes;')
 
@@ -34,7 +34,7 @@ conn = pyodbc.connect(
 # You can also connect to it using the SQL Authentication for the 'sa' user if you prefer
 # conn = pyodbc.connect(
 #     'Driver={ODBC Driver 17 for SQL Server};'
-#     r'Server=.\SQLExpress;'
+#     r'Server=.;'
 #     'Database=master;'
 #     'Uid=<your-username>;'
 #     'Pwd=<your-password>')
@@ -52,7 +52,7 @@ conn.close()
 # Connect to your SQLExpress instance using the Windows Authentication
 conn = pyodbc.connect(
     'Driver={ODBC Driver 17 for SQL Server};'
-    r'Server=.\SQLExpress;'
+    r'Server=.;'
     'Database=SystemLogs;'
     'Trusted_Connection=yes;')
 
@@ -77,7 +77,7 @@ conn.close()
 # Connect to your Azure SQL Database
 conn = pyodbc.connect(
     'Driver={ODBC Driver 17 for SQL Server};'
-    'Server=lucazav.database.windows.net;'
+    'Server=<your-server-name>.database.windows.net;'
     'Database=SystemLogs;'
     'Uid=<your-username>;'
     'Pwd=<your-password>')

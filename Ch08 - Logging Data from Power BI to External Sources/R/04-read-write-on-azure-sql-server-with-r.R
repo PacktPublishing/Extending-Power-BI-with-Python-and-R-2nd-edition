@@ -4,14 +4,14 @@ library(DBI)
 
 # Connect to your SQLExpress instance using the Windows Authentication
 conn <- dbConnect(
-  odbc::odbc(), server = r'{.\SQLExpress}',
+  odbc::odbc(), server = r'{.}',
   database = 'SystemsLogging', trusted_connection = 'yes',
   driver = '{ODBC Driver 17 for SQL Server}'
 )
 
 # You can also connect to it using the SQL Authentication for the 'sa' user if you prefer
 # conn <- DBI::dbConnect(
-#   odbc::odbc(), server = r'{.\SQLExpress}',
+#   odbc::odbc(), server = r'{.}',
 #   database = 'SystemsLogging', uid = 'sa',
 #   pwd = '<your_password>',
 #   driver = '{ODBC Driver 17 for SQL Server}'
@@ -27,7 +27,7 @@ dbDisconnect(conn)
 
 # Connect to your Azure SQL Database
 conn <- dbConnect(
-  odbc::odbc(), server = 'lucazav.database.windows.net',
+  odbc::odbc(), server = '<your-server-name>.database.windows.net',
   database = 'SystemsLogging', uid = '<your-username>',
   pwd = '<your-password>',
   driver = '{ODBC Driver 17 for SQL Server}'

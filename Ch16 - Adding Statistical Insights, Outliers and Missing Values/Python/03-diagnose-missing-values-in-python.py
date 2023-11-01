@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 # %%
 def miss_var_summary(data):
     n_missing = data.isnull().sum()
-    percent_missing = data.isnull().sum() * 100 / len(df)
+    percent_missing = data.isnull().sum() * 100 / len(data)
     missing_value_df = pd.DataFrame({'variable': data.columns,
                                      'n_miss' : n_missing,
                                      'pct_miss': percent_missing}).sort_values('n_miss', ascending=False)

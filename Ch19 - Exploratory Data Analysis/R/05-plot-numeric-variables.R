@@ -3,7 +3,7 @@ library(dplyr)
 library(ggpubr)
 library(cowplot)
 
-folder <- r'{C:\Users\lucazav\OneDrive\MVP\PacktBook\Code\Extending-Power-BI-with-Python-and-R-2nd-edition\Ch19 - Exploratory Data Analysis}'
+folder <- r'{C:\<your-path>\Ch19 - Exploratory Data Analysis}'
 
 histodensity_lst <- readRDS(file.path(folder, 'Demo\\histodensity_lst.rds', fsep = '\\'))
 histodensity_transf_lst <- readRDS(file.path(folder, 'Demo\\histodensity_transf_lst.rds', fsep = '\\'))

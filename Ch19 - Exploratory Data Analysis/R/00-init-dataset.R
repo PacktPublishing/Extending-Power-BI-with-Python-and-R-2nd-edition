@@ -1,7 +1,6 @@
 library(readr)
 library(dplyr)
 
-# Ricordarsi di menzionare tk_augment_timeseries_signature di timetk
 
 #-- Change this section to load your data ----
 

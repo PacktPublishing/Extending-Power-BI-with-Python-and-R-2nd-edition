@@ -7,7 +7,7 @@ library(ggmosaic)
 
 
 # Load the dataset with proper column data types
-folder <- r'{C:\Users\lucazav\OneDrive\MVP\PacktBook\Code\Extending-Power-BI-with-Python-and-R-2nd-edition\Ch19 - Exploratory Data Analysis}'
+folder <- r'{C:\<your-path>\Ch19 - Exploratory Data Analysis}'
 
 init_path <- file.path(folder, r'{R\00-init-dataset.R}', fsep = '\\')
 

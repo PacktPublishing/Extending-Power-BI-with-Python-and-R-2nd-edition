@@ -18,6 +18,22 @@ if(!exists('tbl', mode='list')) {
 }
 
 
+specify_decimal_p <- function(x, k = 3, p.value = FALSE) {
+
+  # for example, if p.value is 0.002, it should be displayed as such
+  if (k < 3 && isTRUE(p.value)) k <- 3
+
+  # formatting the output properly
+  output <- trimws(format(round(x = x, digits = k), nsmall = k), which = "both")
+
+  # if it's a p-value, then format it properly
+  if (isTRUE(p.value) && output < 0.001) output <- "< 0.001"
+
+  # this will return a character
+  return(output)
+}
+
+
 yeo_johnson_transf <- function(data) {
   
   rec <- recipe(data, as.formula(' ~ .'))
@@ -111,19 +127,19 @@ scatterMarginal <- function(data, x, y, grp, x_transf_type, y_transf_type, grp_m
               italic('tau'), ' = ', k_estimate, ', ', italic('p'), ' = ', k_pvalue
         ),
         list(
-          # p_estimate = ggstatsplot::specify_decimal_p(cor_p$estimate, decimals),
-          # p_pvalue = ggstatsplot::specify_decimal_p(cor_p$p.value, k = decimals_p, p.value = TRUE),
-          # s_estimate = ggstatsplot::specify_decimal_p(cor_s$estimate, decimals),
-          # s_pvalue = ggstatsplot::specify_decimal_p(cor_s$p.value, k = decimals_p, p.value = TRUE),
-          # k_estimate = ggstatsplot::specify_decimal_p(cor_k$estimate, decimals),
-          # k_pvalue = ggstatsplot::specify_decimal_p(cor_k$p.value, k = decimals_p, p.value = TRUE)
+          p_estimate = specify_decimal_p(cor_p$estimate, decimals),
+          p_pvalue   = specify_decimal_p(cor_p$p.value, k = decimals_p, p.value = TRUE),
+          s_estimate = specify_decimal_p(cor_s$estimate, decimals),
+          s_pvalue   = specify_decimal_p(cor_s$p.value, k = decimals_p, p.value = TRUE),
+          k_estimate = specify_decimal_p(cor_k$estimate, decimals),
+          k_pvalue   = specify_decimal_p(cor_k$p.value, k = decimals_p, p.value = TRUE)
           
-          p_estimate = format(cor_p$estimate, digits = decimals + 1),
-          p_pvalue = format(cor_p$p.value, digits = decimals_p + 1),
-          s_estimate = format(cor_s$estimate, digits = decimals + 1),
-          s_pvalue = format(cor_s$p.value, digits = decimals_p + 1),
-          k_estimate = format(cor_k$estimate, digits = decimals + 1),
-          k_pvalue = format(cor_k$p.value, digits = decimals_p + 1)
+          # p_estimate = format(cor_p$estimate, digits = decimals + 1),
+          # p_pvalue   = format(cor_p$p.value, digits = decimals_p + 1),
+          # s_estimate = format(cor_s$estimate, digits = decimals + 1),
+          # s_pvalue   = format(cor_s$p.value, digits = decimals_p + 1),
+          # k_estimate = format(cor_k$estimate, digits = decimals + 1),
+          # k_pvalue   = format(cor_k$p.value, digits = decimals_p + 1)
         )
       )
     

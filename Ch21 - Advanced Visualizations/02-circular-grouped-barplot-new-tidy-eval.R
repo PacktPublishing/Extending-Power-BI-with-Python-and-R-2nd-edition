@@ -170,7 +170,7 @@ circular_grouped_barplot <- function(data, grp_col_name, label_col_name, value_c
 
 # # Uncomment if you're not running this code on Power BI
 # library(readr)
-# csv_full_path <- 'C:\\<your-path>\\Chapter15\\Scores.csv'
+# csv_full_path <- 'C:\\<your-path>\\Ch21 - Advanced Visualizations\\Scores.csv'
 # dataset <- read_csv(file = csv_full_path)
 
 # # You can also pass the text horizontal justification for the circular grouped barplot as a parameter.

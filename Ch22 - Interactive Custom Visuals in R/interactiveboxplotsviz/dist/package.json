@@ -1,0 +1,17 @@
+{
+    "version": "1.0.0",
+    "author": {"name":"Luca Zavarella","email":"lucazavarella@email.me"},
+    "resources": [
+        {
+            "resourceId": "rId0",
+            "sourceType": 5,
+            "file": "resources/interactiveboxplotsviz2CAEF8A92DBA4E7AB2DB9F277A5BECE1.pbiviz.json"
+        }
+    ],
+    "visual": {"name":"interactiveboxplotsviz","displayName":"Interactive Boxplots","guid":"interactiveboxplotsviz2CAEF8A92DBA4E7AB2DB9F277A5BECE1","visualClassName":"Visual","version":"1.0.0","description":"Interactive boxplots implemented using Plotly","supportUrl":"https://www.packtpub.com","gitHubUrl":""},
+    "metadata": {
+        "pbivizjson": {
+            "resourceId": "rId0"
+        }
+    }  
+}

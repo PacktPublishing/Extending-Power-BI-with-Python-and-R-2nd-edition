@@ -1,0 +1,4 @@
+import powerbiVisualsApi from "powerbi-visuals-api";
+import IVisualPlugin = powerbiVisualsApi.visuals.plugins.IVisualPlugin;
+declare var interactiveboxplotsviz2CAEF8A92DBA4E7AB2DB9F277A5BECE1: IVisualPlugin;
+export default interactiveboxplotsviz2CAEF8A92DBA4E7AB2DB9F277A5BECE1;

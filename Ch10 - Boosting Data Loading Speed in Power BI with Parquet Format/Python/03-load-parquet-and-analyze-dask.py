@@ -4,7 +4,7 @@ import dask.dataframe as dd
 from dask.diagnostics import ProgressBar
 
 # %%
-main_path = os.path.join('C:\\', 'Datasets', 'AirOnTimeParquetDask')
+main_path = 'C:\\Datasets\\AirOnTimeParquetDask'
 
 ddf = dd.read_parquet(path=os.path.join(main_path, '*'))
 

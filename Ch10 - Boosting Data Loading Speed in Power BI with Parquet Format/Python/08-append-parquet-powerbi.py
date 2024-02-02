@@ -4,9 +4,9 @@ import pandas as pd
 import dask.dataframe as dd
 
 # %%
-to_append_main_path = os.path.join('C:\\', 'Datasets', 'AirOnTimeCSVtoAppend')
-csv_destination_path = os.path.join('C:\\', 'Datasets', 'AirOnTimeCSV')
-partitioned_data_path = os.path.join('C:\\', 'Datasets', 'AirOnTimePowerBI')
+to_append_main_path = 'C:\\Datasets\\AirOnTimeCSVtoAppend'
+csv_destination_path = 'C:\\Datasets\\AirOnTimeCSV'
+partitioned_data_path = 'C:\\Datasets\\AirOnTimePowerBI'
 
 # Check if there are any csv files in the folder
 files = os.listdir(to_append_main_path)

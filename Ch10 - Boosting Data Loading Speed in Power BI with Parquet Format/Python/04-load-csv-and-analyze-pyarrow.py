@@ -5,7 +5,7 @@ import pyarrow.dataset as ds
 import pyarrow.compute as pc 
 
 # %%
-main_path = os.path.join('C:\\', 'Datasets', 'AirOnTimeCSV')
+main_path = 'C:\\Datasets\\AirOnTimeCSV'
 
 dataset = ds.dataset(source=main_path, format='csv')
 

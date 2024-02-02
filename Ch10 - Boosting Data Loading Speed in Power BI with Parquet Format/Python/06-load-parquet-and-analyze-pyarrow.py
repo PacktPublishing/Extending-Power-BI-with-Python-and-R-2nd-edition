@@ -3,7 +3,7 @@ import os
 import pyarrow.dataset as ds
 
 # %%
-main_path = os.path.join('C:\\', 'Datasets', 'AirOnTimeParquetPyArrow')
+main_path = 'C:\\Datasets\\AirOnTimeParquetPyArrow'
 
 dataset = ds.dataset(source=main_path, format='parquet')
 

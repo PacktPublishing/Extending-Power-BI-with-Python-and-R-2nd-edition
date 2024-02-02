@@ -4,7 +4,7 @@ import datetime
 import pyarrow.dataset as ds
 
 # %%
-partitioned_data_path = os.path.join('C:\\', 'Datasets', 'AirOnTimePowerBI')
+partitioned_data_path = 'C:\\Datasets\\AirOnTimePowerBI'
 
 dataset_partitioned = ds.dataset(source=partitioned_data_path, format='parquet',
                                  partitioning='hive')

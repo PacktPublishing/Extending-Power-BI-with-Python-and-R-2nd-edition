@@ -6,7 +6,7 @@ from dask.diagnostics import ProgressBar
 # %%
 # Get the path to the folder containing all the CSV files
 # (update it according to your folders structure)
-main_path = os.path.join('C:\\', 'Datasets', 'AirOnTimeCSV')
+main_path = 'C:\\Datasets\\AirOnTimeCSV'
 
 # %%
 ddf = dd.read_csv(

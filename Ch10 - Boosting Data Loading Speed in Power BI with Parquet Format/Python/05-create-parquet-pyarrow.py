@@ -11,8 +11,8 @@ def getFilePathsFromFolder(directory_path):
     return file_paths
 
 # %%
-main_path = os.path.join('C:\\', 'Datasets', 'AirOnTimeCSV')
-to_append_path = os.path.join('C:\\', 'Datasets', 'AirOnTimeCSVtoAppend')
+main_path = 'C:\\Datasets\\AirOnTimeCSV'
+to_append_path = 'C:\\Datasets\\AirOnTimeCSVtoAppend'
 
 file_paths = getFilePathsFromFolder(main_path)
 to_append_file_paths = getFilePathsFromFolder(to_append_path)

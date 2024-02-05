@@ -4,7 +4,7 @@ import dask.dataframe as dd
 from dask.diagnostics import ProgressBar
 
 # %%
-main_path = os.path.join('C:\\', 'Datasets', 'AirOnTimeCSV')
+main_path = 'C:\\Datasets\\AirOnTimeCSV'
 
 # %%
 ddf = dd.read_csv(

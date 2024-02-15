@@ -89,7 +89,7 @@ plot_df = pd.DataFrame(plot_data, columns = ['plot_name','chunk_id','plot_str'])
 
 
 # %%
-# # Trying the code in 07-deserialize-plots-df-into-python-visual.py to deserialize the plot
+# # Trying the code in 07-deserialize-plots-df-into-python-visual.py to debug the deserialization of the plot
 
 # import matplotlib.pyplot as plt
 

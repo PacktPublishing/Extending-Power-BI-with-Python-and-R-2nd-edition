@@ -65,23 +65,36 @@ with io.BytesIO() as buffer:
 
 
 # %%
+# Checking the length of the byte string representation
 len(image_to_string) # 78.164
 
 # %%
 def toCut(obj, width):
     return re.findall('.{1,%s}' % width, obj, flags=re.S)
 
-max_len = 20000
+def find_largest_chunk_length(n):
+    # Calculate k so that k*10000 <= n and k*10000 <= 30000
+    # to respect the limit of 32,766 characters for the
+    # length of a string in a dataset cell in Power Query 
+    k = min(n // 10000, 3)
+    
+    # Return the larger value of k * 10000 that fits in n
+    # so that k * 10000 <= 30000
+    return k * 10000
 
+str_len = len(image_to_string)
+max_len = find_largest_chunk_length(str_len)
+
+# %%
 image_to_string_splitted = toCut(image_to_string, max_len)
 
-num_chops = ceil(len(image_to_string) / max_len)
+num_chops = ceil(str_len / max_len)
 
 tmp_data = {
-        'plot_name': ['plot01'] * num_chops,
-        'chunk_id': list(range(1, num_chops+1)),
-        'plot_str': image_to_string_splitted
-    }
+    'plot_name': ['plot01'] * num_chops,
+    'chunk_id': list(range(1, num_chops+1)),
+    'plot_str': image_to_string_splitted
+}
 
 img_to_str_splitted_df = pd.DataFrame(tmp_data, columns = ['plot_name','chunk_id','plot_str'])
 

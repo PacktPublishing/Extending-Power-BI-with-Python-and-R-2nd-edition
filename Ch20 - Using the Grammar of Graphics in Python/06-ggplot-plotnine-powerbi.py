@@ -28,7 +28,6 @@ p = (
         )
         + labs(title='Passenger Count by Class',
                x='Class', y='Count', fill='Class')
-        + theme_tufte()
 )
 
 print(p)

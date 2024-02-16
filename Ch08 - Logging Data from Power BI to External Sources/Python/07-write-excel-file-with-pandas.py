@@ -8,4 +8,4 @@ data = {
 
 data_df = pd.DataFrame(data)
 
-data_df.to_excel(r'D:\<your-path>\Chapter07\Python\example-write.xlsx', index = False, engine='openpyxl')
+data_df.to_excel(r'D:\<your-path>\Ch08 - Logging Data from Power BI to External Sources\Python\example-write.xlsx', index = False, engine='openpyxl')

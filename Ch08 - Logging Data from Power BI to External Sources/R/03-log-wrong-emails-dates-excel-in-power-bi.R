@@ -11,7 +11,7 @@ wrong_dates_df <- dataset %>%
 
 df_named_lst <- list("Wrong emails" = wrong_emails_df, "Wrong dates" = wrong_dates_df)
 
-write.xlsx(df_named_lst, file = r'{D:\<your-path>\Chapter07\R\wrong-data.xlsx}')
+write.xlsx(df_named_lst, file = r'{D:\<your-path>\Ch08 - Logging Data from Power BI to External Sources\R\wrong-data.xlsx}')
 
 # Keep only rows having valid email and ban date
 df <- dataset %>%

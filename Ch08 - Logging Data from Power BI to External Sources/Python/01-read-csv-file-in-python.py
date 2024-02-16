@@ -1,6 +1,7 @@
+# %%
 import csv
 
-with open(r'D:\<your-path>\Chapter07\example.csv') as csv_file:
+with open(r'D:\<your-path>\Ch08 - Logging Data from Power BI to External Sources\example.csv') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     row_index = 0
     for row in csv_reader:

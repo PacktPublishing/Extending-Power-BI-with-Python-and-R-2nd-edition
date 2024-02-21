@@ -9,7 +9,7 @@ import pandas as pd
 conn = pyodbc.connect(
     'Driver={ODBC Driver 17 for SQL Server};'
     'Server=<your-server-name>.database.windows.net;'
-    'Database=SystemLogs;'
+    'Database=SystemsLogging;'
     'Uid=<your-username>;'
     'Pwd=<your-password>')
 
@@ -31,7 +31,7 @@ conn = pyodbc.connect(
     'Trusted_Connection=yes;')
 
 # %%
-# You can also connect to it using the SQL Authentication for the 'sa' user if you prefer
+# You can also connect to it using the SQL Authentication for the 'sa' user or any other user if you prefer
 # conn = pyodbc.connect(
 #     'Driver={ODBC Driver 17 for SQL Server};'
 #     r'Server=.;'
@@ -53,11 +53,11 @@ conn.close()
 conn = pyodbc.connect(
     'Driver={ODBC Driver 17 for SQL Server};'
     r'Server=.;'
-    'Database=SystemLogs;'
+    'Database=SystemsLogging;'
     'Trusted_Connection=yes;')
 
 # %%
-# Create the WrongEmails table into your SystemLogs local SQL database.
+# Create the WrongEmails table into your SystemsLogging local SQL database.
 # The table will have the columns 'UserId' and 'Email'.
 cursor = conn.cursor()
 cursor.execute('''
@@ -78,12 +78,12 @@ conn.close()
 conn = pyodbc.connect(
     'Driver={ODBC Driver 17 for SQL Server};'
     'Server=<your-server-name>.database.windows.net;'
-    'Database=SystemLogs;'
+    'Database=SystemsLogging;'
     'Uid=<your-username>;'
     'Pwd=<your-password>')
 
 # %%
-# Create the WrongEmails table into your SystemLogs Azure SQL database.
+# Create the WrongEmails table into your SystemsLogging Azure SQL database.
 # The table will have the columns 'UserId' and 'Email'.
 cursor = conn.cursor()
 cursor.execute('''

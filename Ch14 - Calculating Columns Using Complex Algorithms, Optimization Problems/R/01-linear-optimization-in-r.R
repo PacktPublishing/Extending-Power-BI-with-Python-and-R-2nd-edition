@@ -7,13 +7,13 @@ library(ompr.roi)
 library(ROI.plugin.glpk)
 
 
-warehouse_supply_tbl = read_xlsx(r'{C:\Users\lucazav\OneDrive\MVP\PacktBook\Code\Extending-Power-BI-with-Python-and-R-2nd-edition\Ch13 - Calculating Columns Using Complex Algorithms, Fuzzy Matching & Optimization Problems\RetailData.xlsx}',
+warehouse_supply_tbl = read_xlsx(r'{D:\<your-path>\Ch14 - Calculating Columns Using Complex Algorithms, Optimization Problems\RetailData.xlsx}',
                                  sheet = 'Warehouse Supply')
 
-country_demands_tbl = read_xlsx(r'{C:\Users\lucazav\OneDrive\MVP\PacktBook\Code\Extending-Power-BI-with-Python-and-R-2nd-edition\Ch13 - Calculating Columns Using Complex Algorithms, Fuzzy Matching & Optimization Problems\RetailData.xlsx}',
+country_demands_tbl = read_xlsx(r'{D:\<your-path>\Ch14 - Calculating Columns Using Complex Algorithms, Optimization Problems\RetailData.xlsx}',
                                 sheet = 'Country Demand')
 
-cost_matrix_tbl = read_xlsx(r'{C:\Users\lucazav\OneDrive\MVP\PacktBook\Code\Extending-Power-BI-with-Python-and-R-2nd-edition\Ch13 - Calculating Columns Using Complex Algorithms, Fuzzy Matching & Optimization Problems\RetailData.xlsx}',
+cost_matrix_tbl = read_xlsx(r'{D:\<your-path>\Ch14 - Calculating Columns Using Complex Algorithms, Optimization Problems\RetailData.xlsx}',
                             sheet = 'Shipping Cost')
 
 

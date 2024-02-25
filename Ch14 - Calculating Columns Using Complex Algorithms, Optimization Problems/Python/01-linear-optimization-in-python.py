@@ -9,7 +9,7 @@ import pulp as plp
 
 # %%
 # Import data from the Excel file
-main_path = r'C:\Users\lucazav\OneDrive\MVP\PacktBook\Code\Extending-Power-BI-with-Python-and-R-2nd-edition\Ch13 - Calculating Columns Using Complex Algorithms, Fuzzy Matching & Optimization Problems'
+main_path = r'D:\<your-path>\Ch14 - Calculating Columns Using Complex Algorithms, Optimization Problems'
 
 warehouse_supply_df = pd.read_excel(os.path.join(main_path,'RetailData.xlsx'),
                                     sheet_name='Warehouse Supply', engine='openpyxl')

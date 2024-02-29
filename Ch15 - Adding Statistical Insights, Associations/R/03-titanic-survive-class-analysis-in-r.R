@@ -9,7 +9,7 @@ violinPlot <- function(data, varx, vary, title, xlab, ylab, alpha=0.5, jitter=F)
     
     if (jitter) {
         
-        p <- ggplot(data=data, aes_string(x=varx, y=vary)) +
+        p <- ggplot(data=data, aes(x=.data[[varx]], y=.data[[vary]])) +
             geom_violin(show.legend = T) +
             geom_jitter(width=0.15, alpha=alpha) +
             labs(title=title, xlab=xlab, ylab=ylab) +
@@ -21,7 +21,7 @@ violinPlot <- function(data, varx, vary, title, xlab, ylab, alpha=0.5, jitter=F)
         
     } else {
         
-        p <- ggplot(data=data, aes_string(x=varx, y=vary)) +
+        p <- ggplot(data=data, aes(x=.data[[varx]], y=.data[[vary]])) +
             geom_violin(show.legend = T) +
             geom_boxplot(width=0.1, color="darkgrey", alpha=0.5) +
             labs(title=title, xlab=xlab, ylab=ylab) +

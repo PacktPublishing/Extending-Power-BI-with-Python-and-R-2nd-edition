@@ -66,7 +66,7 @@ def sentimentOfColumn(df,col_name):
 endpoint = os.environ.get('LANGUAGE_URL')
 key = os.environ.get('LANGUAGE_API_KEY')
 
-if not key or (key == '<your-language-key>'):
+if not key:
     raise Exception("A key should be provided to invoke the endpoint")
 
 sentiment_enriched_df = sentimentOfColumn(dataset, col_name='comment')

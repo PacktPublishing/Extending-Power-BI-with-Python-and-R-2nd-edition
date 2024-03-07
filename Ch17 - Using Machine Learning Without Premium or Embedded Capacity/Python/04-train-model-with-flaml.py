@@ -12,10 +12,10 @@ import os
 main_path = r'C:\<your-path>\Ch17 - Using Machine Learning Without Premium or Embedded Capacity'
 
 # %%
-# Uncomment this code if you're not using it in Power BI
-# in order to load the previous imputed Titanic dataset in script 01
-dataset = pd.read_csv(os.path.join(main_path, 'titanic-imputed.csv'))
-dataset
+# # Uncomment this code if you're not using it in Power BI
+# # in order to load the previous imputed Titanic dataset in script 01
+# dataset = pd.read_csv(os.path.join(main_path, 'titanic-imputed.csv'))
+# dataset
 
 # %%
 # Let's split the dataframe in a small part to be kept for test purpose and

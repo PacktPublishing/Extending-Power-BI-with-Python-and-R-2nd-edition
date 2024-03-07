@@ -10,12 +10,12 @@ import os
 # %%
 main_path = r'C:\<your-path>\Ch17 - Using Machine Learning Without Premium or Embedded Capacity'
 
-# %%
-# Uncomment this code if you're not using it in Power BI
-# in order to load the imputed test dataset
-dataset = pd.read_csv(os.path.join(main_path, 'titanic-test.csv'),
-                      index_col=False)
-dataset
+# # %%
+# # Uncomment this code if you're not using it in Power BI
+# # in order to load the imputed test dataset
+# dataset = pd.read_csv(os.path.join(main_path, 'titanic-test.csv'),
+#                       index_col=False)
+# dataset
 
 # %%
 # Unserialize the FLAML AutoML object previously trained

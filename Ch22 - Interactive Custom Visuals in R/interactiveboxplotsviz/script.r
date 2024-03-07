@@ -1,3 +1,14 @@
+# # Save the content of all the environment when the custom visual is used in Power BI.
+# # This way you can load the same file in RStudio to debug any issue.
+# fileRda = "C:/Users/<your-username>/Power-BI-Custom-Visuals/tempData.Rda"
+# if(file.exists(dirname(fileRda)))
+# {
+#   if(Sys.getenv("RSTUDIO")!="")
+#     load(file= fileRda)
+#   else
+#     save(list = ls(all.names = TRUE), file=fileRda)
+# }
+
 source('./r_files/flatten_HTML.r')
 
 ############### Library Declarations ###############

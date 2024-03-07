@@ -107,7 +107,7 @@ boxPlot(df_no_outliers, varx = 'quality', vary = 'sulphates', vargrp = 'quality'
 
 # Let's plot an histogram for each variable (no outliers)
 df_no_outliers %>%
-    select( numeric_col_names ) %>% 
+    select( all_of(numeric_col_names) ) %>% 
     dataframeHist(bins = NULL)
 
 

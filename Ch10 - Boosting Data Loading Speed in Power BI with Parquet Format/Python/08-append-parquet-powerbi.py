@@ -18,7 +18,8 @@ if len(csv_files) > 0:
     to_append_ddf = dd.read_csv(
         os.path.join(to_append_main_path, 'airOT*.csv'),
         encoding='latin-1',
-        usecols =['YEAR', 'MONTH', 'DAY_OF_MONTH', 'ORIGIN', 'DEP_DELAY']
+        usecols =['YEAR', 'MONTH', 'DAY_OF_MONTH', 'ORIGIN', 'DEP_DELAY'],
+        dtype={'YEAR': 'int64', 'MONTH': 'int64', 'DAY_OF_MONTH': 'int64', 'ORIGIN': 'string', 'DEP_DELAY': 'float64'}
     )
 
     to_append_ddf.to_parquet(path=partitioned_data_path,

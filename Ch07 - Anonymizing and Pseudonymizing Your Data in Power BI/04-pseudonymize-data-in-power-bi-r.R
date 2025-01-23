@@ -5,6 +5,17 @@ library(dplyr)
 library(purrr)
 library(charlatan)
 
+####### WARNING #######
+# 
+# Starting from the version 0.6.0, the charlatan library has introuced distinct classes,
+# like InternetProvider_en_US, to handle locale-specific functionality.
+#
+# Here some examples:
+# https://cran.r-project.org/web/packages/charlatan/vignettes/creating-realistic-data.html#Protected_health_information
+#
+# Note that not all the providers are implemented for all the locales. For example, there is no InternetProvider_it_IT,
+# so you're forced to use a different locale. 
+
 anonymizeEmails <- function(text_to_anonymize, country) {
   
   locale <- faker_locales_dict[[country]]
@@ -18,6 +29,16 @@ anonymizeEmails <- function(text_to_anonymize, country) {
     
     if (!email %in% names(emails_lst)) {
       
+	  # The following row of code won't work if you are using charlatan >= 0.6.1
+      # In that case, use this code:
+      #
+      #     fake_email <- InternetProvider_en_US$new()$email()
+      #
+      # Change the class according to your specific locale. Keep in mind that the current code falls back to en_US
+	  # in case the locale hasn't be implemented for that provider. So, the default locale in case of
+	  # ITALY as country will be en_US. The same logic could be implemented for charlatan >= 0.6.1 using the
+	  # locale-specific providers.
+			
       fake_email <- InternetProvider$new(locale = locale)$email()
       
       while ( (fake_email %in% emails_lst) | (fake_email %in% names(emails_lst)) ) {
@@ -92,6 +113,19 @@ anonymizeNames <- function(text_to_anonymize, country) {
 }
 
 
+# In case of new versions of spacy, spacy_initialize has changed and you have to set the environment
+# using sys.setenv and make sure you have the language model installed using spacy_install()
+#
+#    Sys.setenv(SPACY_PYTHON = "C:/ProgramData/Miniconda3/envs/presidio_env")
+#
+#    spacy_install(lang_models = "en_core_web_lg")
+#    spacy_initialize(
+#        model = "en_core_web_lg",
+#        entity = TRUE
+#    )
+#
+# (thanks to Antti Rask)
+
 spacy_initialize(
   model = "en_core_web_lg",
   condaenv = r"{C:\ProgramData\Miniconda3\envs\presidio_env}",
@@ -104,7 +138,7 @@ faker_locales_dict <- list(
 )
 
 # Load mapping lists from RDS files if they exist, otherwise create empty lists
-rds_path <- r'{C:\Users\lucazav\OneDrive\MVP\PacktBook\Code\Extending-Power-BI-with-Python-and-R-2nd-edition\Ch07 - Anonymizing and Pseudonymizing Your Data in Power BI\RDSs}'
+rds_path <- r'{D:\<your-path>\Extending-Power-BI-with-Python-and-R-2nd-edition\Ch07 - Anonymizing and Pseudonymizing Your Data in Power BI\RDSs}'
 
 emails_list_rds_path <- file.path(rds_path, 'emails_list.rds')
 names_list_rds_path <- file.path(rds_path , 'names_list.rds')
@@ -129,14 +163,17 @@ if (file.exists(names_list_rds_path)){
 
 df <- dataset
 
+# Since we are using two arguments, we need to use map2_chr instead of map_chr. Notice that we also added .y to the 
+# anonymizeNames() and anonymizeEmails() functions for the same reason (thanks to Antti Rask).
+
 df <- df %>% 
   mutate(
-    Name  = map_chr( Name, .f = ~ anonymizeNames(.x)),
-    Email = map_chr( Email, .f = ~ anonymizeEmails(.x)),
-    Notes = map_chr( Notes, .f = ~ anonymizeEmails(.x))
+    Name  = map2_chr(Name,  Country, .f = ~ anonymizeNames(.x, .y)),
+    Email = map2_chr(Email, Country, .f = ~ anonymizeEmails(.x, .y)),
+    Notes = map2_chr(Notes, Country, .f = ~ anonymizeEmails(.x, .y))
   ) %>% 
   mutate(
-    Notes = map_chr( Notes, .f = ~ anonymizeNames(.x))
+    Notes = map2_chr(Notes, Country, .f = ~ anonymizeNames(.x, .y))
   )
 
 
